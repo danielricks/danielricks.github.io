@@ -1025,7 +1025,7 @@ service section css
     overflow: hidden;
 }
 .single_service{
-    min-height: 555px;
+    min-height: 100px;
 }
 .blog_readmore_btn{
     display: block;
