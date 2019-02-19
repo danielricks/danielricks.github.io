@@ -935,6 +935,11 @@ service section css
 .single_mixi_portfolio:hover .single_work_overlay{
     opacity: 1;
 }
+.resume{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #333;
+}
 
 
 
