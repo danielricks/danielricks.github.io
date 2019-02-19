@@ -57,6 +57,7 @@
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav navbar-right">
                                             <li><a href="aboutme.html">about me</a></li>
+                                            <li><a href="papers.html">papers</a></li>
                                             <li><a href="projects.html">projects</a></li>
                                             <li><a href="resume.html">resume</a></li>
                                             <li><a href="contact.html">contact</a></li>
@@ -78,7 +79,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="head_title text-center">
-                            <h1>services</h1>
+                            <h1>projects</h1>
                         </div><!-- End of head title -->
 
                         <div class="main_service_area"> 
@@ -91,16 +92,12 @@
                                     </div>
                                     <div class="col-sm-5 col-sm-push-1">
                                         <div class="single_service">
-                                            <h3>creative</h3>
-                                            <h2>kitchen</h2>
+                                            <h3>The Arbiter</h3>
+                                            <h5>Response Evaluation for Conversations</h5>
                                             <div class="separator2"></div>
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                                eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  </p>
+                                            <p>One of the key ideas in our chatbot's design was having multiple text generators run in parallel after receiving user input, and choosing the most relevant response from that list of generated responses. The Arbiter, my method of response evaluation, increased our response relevance by ~15%, as well as uniting and reducing the current evaluation code by over 200%. The method compares features such as consistency, relevance, sentiment, intent, propriety, length, grammar, generator preference, context, personality, and repetition, in order to choose the most relevant response for this particular conversation. </p>
 
-                                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-                                                sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-
-                                            <a href="" class="btn btn-default">learn more</a>
+<!--                                             <a href="https://s3.amazonaws.com/dex-microsites-prod/alexaprize/2018/papers/Eve.pdf" class="btn btn-default">read the paper</a> -->
                                         </div>
                                     </div>
                                 </div>
@@ -117,16 +114,100 @@
 
                                     <div class="col-sm-5 col-sm-pull-6">
                                         <div class="single_service">
-                                            <h3>art</h3>
-                                            <h2>installation</h2>
+                                            <h3>Text Topic Classifier</h3>
+                                            <h5>For Intent Recognition</h5>
                                             <div class="separator2"></div>
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                                eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  </p>
+                                            <p>Our chatbot needed a way to recognize the topic that users were discussing without relying on keywords in the text itself (when people are asking about medical problems, they don't usually use language that's indicative of the topic, especially taking into account word sense disambiguation (i.e. 'My back hurts')). </p>
+                                            <p>I used Selenium and Beautiful Soup to scrape the popular question-answer website, Quora, to gather 200k question and topic pairs as training data. Then I compared both SVM and neural network approaches, and found a solution that achieved ~85% accuracy, despite running on sentences of less than 10 words.</p>
 
-                                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-                                                sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+<!--                                            <a href="https://pcc4318.files.wordpress.com/2017/11/keg_aaai_2018_interaction_modes.pdf" class="btn btn-default">read the paper</a> -->
+                                        </div>
+                                    </div>
 
-                                            <a href="" class="btn btn-default">learn more</a>
+                                </div>
+                            </div><!-- End of single service area -->
+
+                            <div class="single_service_area margin-top-80">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="signle_service_left">
+                                            <img src="assets/images/styletransfer.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-push-1">
+                                        <div class="single_service">
+                                            <h3>Neural Style Transfer</h3>
+                                            <h5>Deep Learning Art</h5>
+                                            <div class="separator2"></div>
+                                            <p>I used a pre-trained VGG-19 model, computed the content and style costs, and then optimized between them. The result is a blend of the content of the first picture, and the style of the second. </p>
+
+                                            <a href="https://deepart.io/" class="btn btn-default">try it for yourself</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End of single service area -->
+
+                            <div class="single_service_area  margin-top-80">
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-sm-push-6">
+                                        <div class="signle_service_left">
+                                            <img src="assets/images/service5.jpg" alt="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-sm-pull-6">
+                                        <div class="single_service">
+                                            <h3>Carl</h3>
+                                            <h5>Winning IEEE CIG 2017 Text-based Adventure Competition in 2017</h5>
+                                            <div class="separator2"></div>
+                                            <p>To address state space disambiguation, Carl categorizes each of the <a href="https://arxiv.org/abs/1506.06726">skip-thought</a> vectors of each new sentence based on its proximity to a set of pre-defined example sentences. This allows Carl to roughly keep track of actual locations, as opposed to falsely identifying action feedback as location information. Carl also uses word2vec operations to determine priority for object manipulation. In a high-dimensional embedding space, the vector of a noun is projected onto the vector defining the distance between two words that express opposing ideas ('tree' and 'forest' represent 'more manipulable' vs. 'less manipulable'). This allows Carl to get a rough approximation of which nouns in his vicinity are able to be picked up or acted on (i.e. 'A sword hangs on the mantle before you.'), as opposed to just being flavor text (i.e. 'You see mountains in the distance.'). </p>
+
+                                            <a href="http://atkrye.github.io/IEEE-CIG-Text-Adventurer-Competition/2017/08/29/SecondYearResults/" class="btn btn-default">see the announcement</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><!-- End of single service area -->
+
+                            <div class="single_service_area margin-top-80">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="signle_service_left">
+                                            <img src="assets/images/elephant.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-push-1">
+                                        <div class="single_service">
+                                            <h3>Understanding <i>Proboscideas</i></h3>
+                                            <h5>Classifying Elephant Utterances</h5>
+                                            <div class="separator2"></div>
+                                            <p>Using vocalizations created by wild African elephants in Sri Lanka between 2006 and 2007 (from the <a href="https://catalog.ldc.upenn.edu/LDC2010S05">LDC</a>), I used the spectrograms and the mel-frequency cepstrum coefficients to train a model that classsified vocalization into 14 different categories of growls, roars, and chirps.</p>
+
+<!--                                            <a href="https://www.ijcai.org/proceedings/2017/0144.pdf" class="btn btn-default">read the paper</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End of single service area -->
+
+
+                            <div class="single_service_area  margin-top-80">
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-sm-push-6">
+                                        <div class="signle_service_left">
+                                            <img src="assets/images/service5.jpg" alt="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-sm-pull-6">
+                                        <div class="single_service">
+                                            <h3>Doug</h3>
+                                            <h5>Winning IEEE CIG 2017 Text-based Adventure Competition in 2016</h5>
+                                            <div class="separator2"></div>
+                                            <p>Doug uses one-shot learning to navigate the environment. During play, he extracts nouns from game text and attempts to apply verbs in a reasonable way (using vector embeddings generated by Tomas Mikolov's <a href="https://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf">word2vec</a>). In word2vec's high-dimensional embedding space, each word is represented as an n-dimensional vector, with words that appear in similar contexts having similar vectors. Doug performs a set of mathematical operations in order to identify which verbs 'match' a given noun, and uses that to generate action text (short commands like 'open door', 'kill troll with sword', etc.). </p>
+
+                                            <a href="http://atkrye.github.io/IEEE-CIG-Text-Adventurer-Competition/2016/11/07/Results/" class="btn btn-default">see the announcement</a> <a href="https://github.com/danielricks/BYU-Agent-2016" class="btn btn-default">see the code</a>
                                         </div>
                                     </div>
 
@@ -142,20 +223,100 @@
                                     </div>
                                     <div class="col-sm-5 col-sm-push-1">
                                         <div class="single_service">
-                                            <h3>print</h3>
-                                            <h2>design</h2>
+                                            <h3>Autoplay</h3>
+                                            <h5>A Learning Environment for Interactive Fiction</h5>
                                             <div class="separator2"></div>
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                                eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.  </p>
+                                            <p>Inspired by the <a href="https://github.com/mgbellemare/Arcade-Learning-Environment">Arcade Learning Environment</a>, I built Autoplay to streamline reinforcement learning in text-based environments. Included were 50 games, including the well-known Zork series. Autoplay quickly became a standard for text-based research, and we helped other colleges set up Autoplay in their own labs (including the team that created <a href="https://arxiv.org/pdf/1705.05637.pdf">Golovin</a>). This continued until Microsoft came out with <a href="https://www.microsoft.com/en-us/research/project/textworld/">TextWorld</a> in the summer of 2018, which added the ability to create games of varying size and complexity. They cited us though, so no hard feelings.</p>
 
-                                            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, 
-                                                sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-
-                                            <a href="" class="btn btn-default">learn more</a>
+                                            <a href="https://github.com/danielricks/autoplay" class="btn btn-default">see the code</a>
                                         </div>
                                     </div>
                                 </div>
                             </div><!-- End of single service area -->
+
+                            <div class="single_service_area  margin-top-80">
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-sm-push-6">
+                                        <div class="signle_service_left">
+                                            <img src="assets/images/victory.jpg" alt="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-sm-pull-6">
+                                        <div class="single_service">
+                                            <h3>Automated OCR Pipeline</h3>
+                                            <h5>Digitizing Historical Documents</h5>
+                                            <div class="separator2"></div>
+                                            <p>I used Bill Lund's <a href="https://scholarsarchive.byu.edu/cgi/viewcontent.cgi?article=5023&context=etd">ensemble OCR method</a> (which combines results from Abbyy FineReader, OmniPage Pro, Adobe Acrobat Pro, and Tesseract) to create an automated pipeline through which scanned images of historical documents can be digitized into searchable text, which reduced the average required time by over 75%. </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><!-- End of single service area -->
+
+                            <div class="single_service_area margin-top-80">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="signle_service_left">
+                                            <img src="assets/images/arm.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-push-1">
+                                        <div class="single_service">
+                                            <h3>The Robot Arm</h3>
+                                            <h5>Solving 3D Inverse Kinematics</h5>
+                                            <div class="separator2"></div>
+                                            <p>I used the Jacobian transpose method to move a series of joints to a particular point (by finding settings for the revolute joint angles). </p>
+                                            <a href="https://www.youtube.com/watch?v=lz17cYuur9A" class="btn btn-default">see it in action</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End of single service area -->
+
+                            <div class="single_service_area  margin-top-80">
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-sm-push-6">
+                                        <div class="signle_service_left">
+                                            <img src="assets/images/basketball.jpg" alt="" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-sm-pull-6">
+                                        <div class="single_service">
+                                            <h3>Person Identification Through Motion</h3>
+                                            <h5>Using Accelerometer Data</h5>
+                                            <div class="separator2"></div>
+                                            <p>We collected accelerometer information (using Yei 3-Space Sensors) from participants while they shot free throws on a basketball court. Using Weka, we found that we can definitively identify individuals using movement data. </p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div><!-- End of single service area -->
+
+                            <div class="single_service_area margin-top-80">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="signle_service_left">
+                                            <img src="assets/images/AlvinXVII.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-sm-push-1">
+                                        <div class="single_service">
+                                            <h3>ALVIN</h3>
+                                            <h5>The Parody Engine</h5>
+                                            <div class="separator2"></div>
+                                            <p>We created a system that will take input lyrics or prose and, using natural language parsers, word2vec, and the Google n-gram collection, generate a parody that matches in meter and rhythm. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- End of single service area -->
+
+
+
+
                         </div>
                     </div><!-- End of col-sm-12 -->
                 </div><!-- End of row -->
